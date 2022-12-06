@@ -16,6 +16,6 @@ public class MoveForward : MonoBehaviour{
 
         transform.position = pos;
 
-        this.transform.localScale -= (new Vector3(0.1f, 0.1f, 0.1f));
+        
     }
 }

@@ -6,16 +6,17 @@ public class PlayerMovement : MonoBehaviour
 {
     public float maxSpeed = 50f;
     public float rotSpeed = 180f;
-    private GameObject[] players; 
-
+    public GameObject[] players;
+    
     // Start is called before the first frame update
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update()
+    {
 
         // ROTATE the ship
 
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
             players = GameObject.FindGameObjectsWithTag("Player");
 
-            if(players.Length > 1)
+            if (players.Length > 1)
             {
                 Destroy(players[1]);
             }
@@ -59,7 +60,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.position = GameObject.FindWithTag("StarPos").transform.position;
         }
-        
-      
-}
+    }
+
 }

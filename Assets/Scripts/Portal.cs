@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    public string whereToGo;
+    public int whereToGo;
 
     // Use this for initialization 
     void Start()

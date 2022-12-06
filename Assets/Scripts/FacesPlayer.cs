@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class FacesPlayer : MonoBehaviour
 {
+    public float rotSpeed = 180f;
      Transform player;
 
     // Update is called once per frame
     void Update(){
         if(player == null){
             // Find the player's ship
-            GameObject go = GameObject.Find("PlayerShip");
+            GameObject go = GameObject.Find("Player");
 
             if(go != null){
                 player = go.transform;
@@ -25,7 +26,8 @@ public class FacesPlayer : MonoBehaviour
 
         float zAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
 
-        transform.rotation = Quaternion.Euler(0, 0, zAngle);
+        Quaternion desiredRot = Quaternion.Euler(0, 0, zAngle);
 
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, desiredRot, rotSpeed * Time.deltaTime);
     }
 }
